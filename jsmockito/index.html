@@ -94,7 +94,7 @@
         into it. If you're integrating with <a href="http://pivotal.github.io/jasmine/" target="_top">Jasmine</a>
         (and why wouldn't you?) then you just need to make the following calls:</p>
 
-<pre class="prettyprint">
+<pre class="prettyprint" style="width: 30%">
     JsHamcrest.Integration.jasmine({scope:this});
     JsMockito.Integration.Jasmine();
 </pre>
@@ -106,37 +106,12 @@
 
     <h3>Or you can stub method calls:</h3>
 
-<pre class="prettyprint">
-    var mockedObject = mock(Array);
-  
-    when(mockedObject).get(1).thenReturn("hello world");
-    
-    // -- start code under test --
-    alert(mockedObject.get(1));
-  
-    // the following alerts 'true' as get(99) was not stubbed
-    alert(typeof (mockedObject.get(99)) === 'undefined');
-    // -- end code under test --
-</pre>
+    <iframe width="70%" height="300" src="http://jsfiddle.net/ferronrsmith/eV3VT/1/embedded/" allowfullscreen="allowfullscreen" frameborder="0"></iframe>
 
 
     <h3>For a JavaScript twist, you can also mock functions:</h3>
 
-<pre class="prettyprint">
-    mockFunc = mockFunction();
-    when(mockFunc)(anything()).then(function(arg) {
-      return "foo " + arg;
-    });
-  
-    // -- start code under test --
-    mockFunc("bar");
-    // -- end code under test --
-  
-    verify(mockFunc)(anything());
-
-    // or if you want to verify the scope it was called with, use:
-    verify(mockFunc).call(this, anything())
-</pre>
+    <iframe width="70%" height="300" src="http://jsfiddle.net/ferronrsmith/QMNBb/1/embedded/" allowfullscreen="allowfullscreen" frameborder="0"></iframe>
 
     <h2>Mockitos are also good for spys</h2>
 
@@ -146,7 +121,7 @@
 
     <p>An example with functions:</p>
 
-<pre class="prettyprint">
+<pre class="prettyprint" style="width: 70%">
     realFunc = function(msg) { alert(msg) };
     mockFunc = spy(realFunc);
 
@@ -160,7 +135,7 @@
 
     <p>or with objects:</p>
 
-<pre class="prettyprint">
+<pre class="prettyprint" style="width: 70%">
     realObj = new Array();
     mockedObj = spy(realObj);
 
