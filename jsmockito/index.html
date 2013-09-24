@@ -1,0 +1,207 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <title>JsMockito - Simple & Better Javascript mocking</title>
+    <style type="text/css">
+        body {font-family: arial, sans-serif;}
+        p {font-size:95%;}
+        #sidebar {float:right; width:20em; font-size:90%;}
+        #sidebar h2 {font-size:100%;}
+        #sidebar div {background-color:#d9d9ff; margin:0 0 5px 0; padding:0.1em 0.5em;}
+        #sidebar div p {font-size:80%;}
+        #sidebar div ul {font-size:80%; line-height: 1.7em; padding-left:2em;}
+        #sidebar div .showall {float:right;}
+        #sidebar #license p {font-size:100%;}
+        .title a img {border:0;}
+    </style>
+    <script src="https://google-code-prettify.googlecode.com/svn/loader/run_prettify.js"></script>
+    <link rel="stylesheet" href="https://google-code-prettify.googlecode.com/svn/trunk/styles/doxy.css"/>
+</head>
+<body>
+<div id="sidebar">
+    <div id="license">
+        <p><b>License: </b><a href="http://www.opensource.org/licenses/mit-license.php" target="_top">MIT License</a></p>
+    </div>
+
+    <div id="authors">
+        <h2>Authors:</h2>
+        <ul>
+            <li><b><a href="http://chrisleishman.com" target="_top">Chris Leishman</a></b> - primary author</li>
+            <li><b><a href="http://ferronrsmith.github.com" target="_top">Ferron Hanse</a></b> - maintainer</li>
+        </ul>
+    </div>
+
+    <div id="credits">
+        <h2>Credit and Thanks:</h2>
+        <ul>
+            <li><b><a href="http://mockito.org" target="_top">Mockito Team</a></b> - for all the inspiration</li>
+            <li><b><a href="http://jshamcrest.destaquenet.com/" target="_top">Daniel Martins</a></b> - for the excellent jshamcrest library</li>
+        </ul>
+    </div>
+
+    <div id="news">
+        <h2>News:</h2>
+        <ul>
+            <li><b>16-08-2011</b>: JsMockito v1.0.4 released (<a href="http://github.com/ferronrsmith/jsmockito/blob/1.0.4/ReleaseNotes.md">Release Notes</a>)</li>
+            <li><b>21-02-2011</b>: JsMockito v1.0.3 released (<a href="http://github.com/ferronrsmith/jsmockito/blob/1.0.3/ReleaseNotes.md">Release Notes</a>)</li>
+            <li><b>21-01-2010</b>: JsMockito v1.0.2 released (<a href="http://github.com/ferronrsmith/jsmockito/blob/1.0.2/ReleaseNotes.md">Release Notes</a>)</li>
+            <li><b>11-09-2009</b>: JsMockito v1.0.1 released (<a href="http://github.com/ferronrsmith/jsmockito/blob/1.0.1/ReleaseNotes.md">Release Notes</a>)</li>
+            <li><b>10-09-2009</b>: JsMockito v1.0.0 released</li>
+        </ul>
+    </div>
+
+    <div id="downloads">
+        <p class="showall"><a href="http://github.com/chrisleishman/jsmockito/downloads" target="_top">Show all</a></p>
+        <h2>Downloads:</h2>
+        <ul>
+            <li><a href="http://cloud.github.com/downloads/ferronrsmith/jsmockito/jsmockito-1.0.4.js">jsmockito-1.0.4.js</a></li>
+            <li><a href="http://cloud.github.com/downloads/ferronrsmith/jsmockito/jsmockito-1.0.4-minified.js">jsmockito-1.0.4-minified.js</a></li>
+            <li><a href="http://cloud.github.com/downloads/ferronrsmith/jsmockito/jsmockito-1.0.4-api-doc.zip">jsmockito-1.0.4-api-doc.zip</a></li>
+        </ul>
+    </div>
+</div>
+
+<div id="overview">
+
+    <p class="title"><a href="http://jsmockito.org" target="_top"><img src="jsmockito.png" height="120px" /></a></p>
+
+    <p><a href="http://github.com/ferronrsmith/jsmockito" target="_top">http://github.com/ferronrsmith/jsmockito</a></p>
+
+    <h2>Why drink it?</h2>
+    <p>JsMockito is a JavaScript stub/mock framework heavily inspired by <a
+            href="http://mockito.org" target="_top">Mockito</a>. To quote the mockito website:</p>
+
+    <blockquote><i>"Mockito is a mocking framework that tastes really good. It lets
+        you write beautiful tests with a clean & simple API. Mockito doesn't give you
+        a hangover because the tests are very readable and they produce clean
+        verification errors."</i></blockquote>
+
+    <p>JsMockito aims to try and reproduce the clean &amp; simple API, with a
+        JavaScript twist. And why not add some variation to your drinking habits?</p>
+
+    <h2>What do you serve it with?</h2>
+
+    <p>JsMockito must be served with
+        <a href="http://jshamcrest.destaquenet.com/" target="_top">JsHamcrest</a>. Not
+        only do they go well together, it's essential to avoid a very nasty
+        hangover.</p>
+
+    <h2>How to drink it?</h2>
+
+    <p>To use JsMockito with a JavaScript unit test framework, follow the usual
+        installation/configuration instructions for the framework and plug JsMockito
+        into it. If you're integrating with <a href="http://pivotal.github.io/jasmine/" target="_top">Jasmine</a>
+        (and why wouldn't you?) then you just need to make the following calls:</p>
+
+<pre class="prettyprint">
+    JsHamcrest.Integration.Jasmine();
+    JsMockito.Integration.Jasmine();
+</pre>
+
+    <h3>Once installed, you can verify with interactions:</h3>
+
+<pre class="prettyprint">
+    var mockedObject = mock(Array);
+  
+    // -- start code under test --
+    mockedObject.push("one");
+    // -- end code under test --
+  
+    verify(mockedObject).push("one");
+</pre>
+
+    <h3>Or you can stub method calls:</h3>
+
+<pre class="prettyprint">
+    var mockedObject = mock(Array);
+  
+    when(mockedObject).get(1).thenReturn("hello world");
+    
+    // -- start code under test --
+    alert(mockedObject.get(1));
+  
+    // the following alerts 'true' as get(99) was not stubbed
+    alert(typeof (mockedObject.get(99)) === 'undefined');
+    // -- end code under test --
+</pre>
+
+    <h3>For a JavaScript twist, you can also mock functions:</h3>
+
+<pre class="prettyprint">
+    mockFunc = mockFunction();
+    when(mockFunc)(anything()).then(function(arg) {
+      return "foo " + arg;
+    });
+  
+    // -- start code under test --
+    mockFunc("bar");
+    // -- end code under test --
+  
+    verify(mockFunc)(anything());
+
+    // or if you want to verify the scope it was called with, use:
+    verify(mockFunc).call(this, anything())
+</pre>
+
+    <h2>Mockitos are also good for spys</h2>
+
+    <p>Real super spies don't drink martinis - they go for mockitos. And just like
+        Mockito, JsMockito supports 'spying' on real functions and objects and verifing
+        how they were interacted with.</p>
+
+    <p>An example with functions:</p>
+
+<pre class="prettyprint">
+    realFunc = function(msg) { alert(msg) };
+    mockFunc = spy(realFunc);
+
+    // -- start code under test --
+    // the following alerts 'hello world'
+    mockFunc("hello world");
+    // -- end code under test --
+
+    verify(mockFunc)("hello world");
+</pre>
+
+    <p>or with objects:</p>
+
+<pre class="prettyprint">
+    realObj = new Array();
+    mockedObj = spy(realObj);
+
+    when(mockedObj).pop().thenReturn("bar");
+
+    // -- start code under test --
+    mockedObject.push("foo");
+    alert(realObj.length); // alerts '1'
+
+    alert(mockedObject.pop()); // alerts 'bar'
+    alert(realObj.length); // still alerts '1'
+    // -- end code under test --
+ 
+    verify(mockedObject).push("foo");
+    verify(mockedObject).pop();
+</pre>
+
+    <p>For more <a href="api/">examples and documentation</a> click here or look in the doc directory.</p>
+
+    <h2>Who is your bartender?</h2>
+
+    <p>This variation is served to you by <a href="http://chrisleishman.com" target="_top">Chris
+        Leishman</a>, <a href="http://ferronrsmith.github.com" target="_top">Ferron
+        Smith</a> and friends. Also a big thumbs up and thanks to the
+        <a href="http://mockito.org" target="_top">Mockito</a> authors for the inspiration!</p>
+
+    <p>Also thanks to the <a href="http://github.com/danielfm/jshamcrest/" target="_top">JsHamcrest</a> authors, who made this easy.</p>
+</div>
+<script type="text/javascript">
+    var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+    document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+    try {
+        var pageTracker = _gat._getTracker("UA-4129248-3");
+        pageTracker._trackPageview();
+    } catch(err) {}</script>
+</body>
+</html>
