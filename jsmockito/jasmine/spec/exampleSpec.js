@@ -9,14 +9,14 @@ describe('mocking objects', function () {
         verify(mockedObject).push("one");
     });
 
-    it('stubbing the get method in the Array object', function () {
+    it('stubbing the toUTCString method in the Date object', function () {
         var mockedObject = mock(Date);
 
         // -- start code under test --
-        when(mockedObject).toUTCString().thenReturn("Mon, 23 Sep 2013 01:31:00 GMT");
+        when(mockedObject).now().thenReturn(999999999999999);
         // -- end code under test --
 
-        expect(mockedObject.toUTCString()).toBe("Mon, 23 Sep 2013 01:31:00 GMT");
+        expect(mockedObject.now()).toBe(999999999999999);
     });
 
     it('mocking a function without args', function () {
@@ -42,3 +42,70 @@ describe('mocking objects', function () {
         expect(mockEcho('pete')).toBe('pete_hello_world_');
     });
 });
+
+
+describe('mocking objects with Jasmine spyOn', function () {
+   it('stubbing the toUTCString method in the Date object', function () {
+
+       var method1 = function () { return Date.now() },
+           method2 = function () { return method1() },
+           mockDate = mock(Date);
+
+//       when(mockDate).now().thenReturn('You have been jacked');
+
+       console.log(method1);
+
+       //expect(method2()).toBe("You have been jacked");
+   })
+});
+
+
+describe("Manually ticking the Jasmine Mock Clock", function() {
+    var clock;
+
+    beforeEach(function() {
+        clock = sinon.useFakeTimers();
+    });
+
+    afterEach(function() {
+        clock = sinon.restore();
+    });
+
+
+    it("causes a timeout to be called synchronously", function() {
+        var callback = sinon.spy();
+
+        clock.tick(99);
+
+        clock.tick(1);
+        // Also:
+        expect(new Date().getTime()).toBe(100);
+    });
+
+    it("spies", function () {
+        spyOn(window, 'alert').andCallFake(function (msg) {
+            return "returning something";
+        });
+
+
+
+        expect(window.alert('msg')).toBe('returning something');
+
+
+    });
+});
+
+describe("Manually ticking the Jasmine Mock Clock", function() {
+
+    it("causes a timeout to be called synchronously", function() {
+        var callback = sinon.spy();
+
+        clock.tick(99);
+
+        clock.tick(1);
+        // Also:
+        expect(new Date().getTime()).toBe(100);
+    });
+
+});
+
