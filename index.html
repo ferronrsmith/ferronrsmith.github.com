@@ -8,7 +8,8 @@
     <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen"/>
     <link rel="stylesheet" type="text/css" href="stylesheets/pygment_trac.css" media="screen"/>
     <link rel="stylesheet" type="text/css" href="stylesheets/print.css" media="print"/>
-
+    <link rel="stylesheet" type="text/css" href="stylesheets/main.css" />
+   
     <!--[if lt IE 9]>
     <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
     <![endif]-->
@@ -36,20 +37,14 @@
             GitHub</a>
     </div>
 </header>
-
+ 
 <div id="content-wrapper">
     <div class="inner clearfix">
         <section id="main-content">
 
             <h3>Current Research</h3>
 
-            <p>
-                <ul>
-                    <li>Currently looking at Machine Learning and <a href="http://opencv.org/">OpenCV</a>. Particularly around Image & Video Processing, object detection and classification. (Area of research for thesis)</li>
-                    <li>Building large applications in <a href="http://angularjs.org">AngularJS</a></li>
-                    <li>Improving website performance</li>
-                    <li>Enterprise error handling</li>
-                </ul>
+            <p id="research-area">
             </p>
             
             <h3>Recommended Areas</h3>
@@ -64,21 +59,25 @@
             
             <h3>Cool freebies</h3>
             
-            <p><a href="https://www.coursera.org/">https://www.coursera.org/</a> is offereing free courses online from Ivy League schools. Persons should really take a look. I've enrolled in the Machine Learning Course from Standford University. Now no one can say I never "went" to an Ivy League school</p>
-
+            <p>
+            <ul class="nostyle">
+                <li>
+                    <a href="https://www.coursera.org/">https://www.coursera.org/</a> is offering free courses online from Ivy League schools. Persons should really take a look. I've enrolled in the Machine Learning Course from Standford University. Now no one can say I never "went" to an Ivy League school</p>
+                </li>
+                <li>
+                    <a href="http://pythonbooks.revolunet.com/">Free Python Books</a>
+                </li>
+                <li>
+                    <a href="http://jsbooks.revolunet.com/">Free JavaScript Books</a>
+                </li>
+                <li>
+                    <a href="https://github.com/ferronrsmith/free-programming-books/blob/master/free-programming-books.md">Free Programming Books </a>
+                </li>
+            </ul>
+                
             <h3>Current Projects</h3>
 
-            <p>
-                <ul>
-                    <li><a href="https://github.com/ferronrsmith/tiny-template-engine">tiny-template-engine</a> - a very simple templating engine</li>
-                    <li><a href="https://github.com/ferronrsmith/tiny-date-formatter">tiny-date-formatter</a> - a very simple date formatting library that developers can use to easily parse date</li>
-                    <li><a href="https://github.com/ferronrsmith/angularjs-memory-game">angularjs-memory-game</a> - port of the jquery memory game to angularjs </li>
-                    <li><a href="https://github.com/ferronrsmith/anuglarjs-jasmine-matchers">anuglarjs-jasmine-matchers</a> - a large set of jasmine matchers for angular js testing</li>
-                    <li><a href="https://github.com/ferronrsmith/angularjs-placeholder">anuglarjs-placeholders</a> - a simple pollfill for html5 placeholders for IE9 and lower</li>
-                    <li><a href="https://github.com/ferronrsmith/jso">jso</a> - a fork rewrite of the Javascript OAuth Library. The new implementation adds authorization grant flow & password grant flow</li>
-                    <li><a href="https://github.com/ferronrsmith/angular-pubnub-chat"> angular pubnub chat </a> A simple implementation of chat client using pubnub for sending messages </li>
-                    <li><a href="https://github.com/ferronrsmith/angular-pubnub-chat-server"> angular pubnub server </a> Backend component for the angular chat service </li>
-                </ul>
+            <p id="project-area">
             </p>
 
             <h3>Testing Framework</h3>
@@ -86,7 +85,7 @@
             <p>Most of my projects available via github use the <a href="http://karma-runner.github.io/0.8/">karma</a> framework for testing. A video is provided below on how karma works</p>
 
             <div class="yt-video-container">
-                <iframe width="720" height="480" src="http://www.youtube.com/embed/MVw8N3hTfCI" frameborder="0" allowfullscreen=""></iframe>
+                <iframe width="600" height="400" src="http://www.youtube.com/embed/MVw8N3hTfCI" frameborder="0" allowfullscreen=""></iframe>
             </div>
 
             <!--<p>Having trouble with Pages? Check out the documentation at <a href="http://help.github.com/pages">http://help.github.com/pages</a>-->
@@ -95,16 +94,22 @@
         </section>
 
         <aside id="sidebar">
-
-
-            <p>Current research projects are highlighted here</p>
-            <ul>
-                Thesis on Computer Vision & Object Detection</br />
-                <img src="images/qrcode.png" />
-            </ul>
+            <p>Reading List</p>
+            
+            <div style="width: 100%; display: table;">
+                <div style="display: table-row">
+                    <div id="fst-book-row" style="width: 50%; display: table-cell;"> Left </div>
+                    <div id="snd-book-row" style="display: table-cell;"> Right </div>
+                </div>
+            </div>
+            
         </aside>
     </div>
 </div>
+    
+    <script type="text/javascript" src="javascripts/jquery-1.11.3.min.js"></script>
+    <script type="text/javascript" src="javascripts/can.jquery.js"></script>
+    <script type="text/javascript" src="javascripts/main.js"></script>
 
 
 </body>
