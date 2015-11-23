@@ -1,4 +1,6 @@
-var projects = new can.List([
+/* global can */
+
+var projects = new can.ArrayList([
     {url: "https://github.com/ferronrsmith/tiny-template-engine", name: "tiny template engine", description: "a very simple templating engine"},
     {url: "https://github.com/ferronrsmith/tiny-date-formatter", name: "tiny date formatter", description: "a very simple date formatting library that developers can use to easily parse date"},
     {url: "https://github.com/ferronrsmith/angularjs-memory-game", name: "angularjs memory game", description: "port of the jquery memory game to angularjs"},
@@ -11,17 +13,29 @@ var projects = new can.List([
     {url: "https://github.com/ferronrsmith/angular-pubnub-chat-server", name: "angular pubnub server", description: "Backend component for the angular chat service"}
 ]);
 
-var research = new can.List([
-        'Enterprise Search with Solr & ElasticSearch',
-        'NoSQL',
-        '<a href="http://canjs.com/">CanJS</a> - simple, elegant javascript framework',
-        'Currently looking at Machine Learning and <a href="http://opencv.org">OpenCV</a>. Particularly around Image & Video Processing, object detection and classification. (Area of research for thesis)',
-        'Building large applications in <a href="http://angularjs.org">AngularJS</a>',
-        "Improving Website performance",
-        "Enterprise error handling" 
+var research = new can.ArrayList([
+    'Enterprise Search with Solr & ElasticSearch',
+    'NoSQL',
+    '<a href="http://canjs.com/">CanJS</a> - simple, elegant javascript framework',
+    'Currently looking at Machine Learning and <a href="http://opencv.org">OpenCV</a>. Particularly around Image & Video Processing, object detection and classification. (Area of research for thesis)',
+    'Building large applications in <a href="http://angularjs.org">AngularJS</a>',
+    "Improving Website performance",
+    "Enterprise error handling"
 ]);
 
-var books = new can.List([
+var recommendations = new can.ArrayList([
+    '<a href="http://angularjs.org">AngularJS</a> is a great framework for developers who want to build applications that scale',
+    'Toby Segaran book, Programming Collective Intelligence. It\'s an awesome Introduction to the subject area'
+]);
+
+var freebies = new can.ArrayList([
+    '<a href="https://www.coursera.org/">https://www.coursera.org/</a> is offering free courses online from Ivy League schools. Persons should really take a look. I\'ve enrolled in the Machine Learning Course from Standford University.Now no one can say I never "went" to an Ivy League school',
+    '<a href="http://pythonbooks.revolunet.com/">Free Python Books</a>',
+    '<a href="https://github.com/ferronrsmith/free-programming-books/blob/master/free-programming-books.md">Free Programming Books </a>',
+    '<a href="http://jsbooks.revolunet.com/">Free JavaScript Books</a>'
+]);
+
+var books = new can.ArrayList([
     {title: "Collection Intelligence", imageUrl: "images/books/pci.jpg"},
     {title: "Collection Intelligence in Action", imageUrl: "images/books/1933988312.jpg"},
     {title: "Search Patterns", imageUrl: "images/books/cover.jpg"},
@@ -39,43 +53,22 @@ var books = new can.List([
 ]);
 
 $(function () {
-    $("#research-area").html(can.view("templates/research.mustache", {research: research}));
+    $("#research-area").html(can.view("templates/items.mustache", {items: research}));
     $("#project-area").html(can.view("templates/projects.mustache", {projects: projects}));
-    
-    var fstList = new can.List();
-    var sndList = new can.List();
-    
-    books.forEach(function(elem, index) {
-        if(index % 2 === 0) {
-            sndList.push(elem)
+    $("#freebies-area").html(can.view("templates/items.mustache", {items: freebies}));
+    $("#recommendations-area").html(can.view("templates/items.mustache", {items: recommendations}));
+
+    var fstList = new can.ArrayList();
+    var sndList = new can.ArrayList();
+
+    books.forEach(function (elem, index) {
+        if (index % 2 === 0) {
+            sndList.push(elem);
         } else {
             fstList.push(elem);
         }
     });
-    
-    function shuffle(array) {
-        var counter = array.length, temp, index;
 
-        // While there are elements in the array
-        while (counter > 0) {
-            // Pick a random index
-            index = Math.floor(Math.random() * counter);
-
-            // Decrease counter by 1
-            counter--;
-
-            // And swap the last element with it
-            temp = array[counter];
-            array[counter] = array[index];
-            array[index] = temp;
-        }
-
-        return array;
-    }
-    
-    shuffle(fstList);
-    shuffle(sndList);
-    
-    $("#fst-book-row").html(can.view("templates/books.mustache", {books: fstList}));
-    $("#snd-book-row").html(can.view("templates/books.mustache", {books: sndList}));
+    $("#fst-book-row").html(can.view("templates/books.mustache", {books: fstList.shuffle()}));
+    $("#snd-book-row").html(can.view("templates/books.mustache", {books: sndList.shuffle()}));
 });
