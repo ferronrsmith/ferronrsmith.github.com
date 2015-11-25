@@ -1,4 +1,4 @@
-/* global can */
+/* global can, $ */
 
 var projects = new can.ArrayList([
     {url: "https://github.com/ferronrsmith/tiny-template-engine", name: "tiny template engine", description: "a very simple templating engine"},
