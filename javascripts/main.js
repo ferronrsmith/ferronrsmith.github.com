@@ -61,7 +61,7 @@ $(function () {
     var fstList = new can.ArrayList();
     var sndList = new can.ArrayList();
 
-    books.forEach(function (elem, index) {
+    books.each(function (elem, index) {
         if (index % 2 === 0) {
             sndList.push(elem);
         } else {
