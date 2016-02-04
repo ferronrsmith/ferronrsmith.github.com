@@ -34,3 +34,7 @@ img {
 footer {
     text-align: center;
 }
+
+h-data, .highlight {
+    font-weight:bolder;
+}

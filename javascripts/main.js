@@ -1,7 +1,14 @@
 /* global can, $ */
 
+var work = new can.ArrayList([
+    'Currently working as a consultant at <h-data>Tera Analytics</h-data>. Specializing in building Big Data analytics tools using a ' +
+    'Flow-based programming paradigm',
+    'Consultant at <h-data>Conscia</h-data>'
+]);
+
 var projects = new can.ArrayList([
     {url: "https://github.com/ferronrsmith/tiny-template-engine", name: "tiny template engine", description: "a very simple templating engine"},
+    {url: "https://github.com/ferronrsmith/bunyan-amqp", name: "Bunyan Log Extension", description: "AMQP (RabbitMQ) stream for the Bunyan logger"},
     {url: "https://github.com/ferronrsmith/tiny-date-formatter", name: "tiny date formatter", description: "a very simple date formatting library that developers can use to easily parse date"},
     {url: "https://github.com/ferronrsmith/angularjs-memory-game", name: "angularjs memory game", description: "port of the jquery memory game to angularjs"},
     {url: "https://github.com/ferronrsmith/anuglarjs-jasmine-matchers", name: "anuglarjs jasmine matchers", description: " a large set of jasmine matchers for angular js testing"},
@@ -16,8 +23,17 @@ var projects = new can.ArrayList([
 var research = new can.ArrayList([
     'Enterprise Search with Solr & ElasticSearch',
     'NoSQL',
+    'ArangoDB',
+    'Compiler Design. Built a toy programming language : ' +
+    '<ul>' +
+    '<li>SMPL(functional programming language)</li>' +
+    '<li>LOGO(subset of the <a href="https://en.wikipedia.org/wiki/Logo_(programming_language)">logo</a> programming language)</li>' +
+    '<li> HPL (Graphics processing language for simple 2D transformations)</li>' +
+    '</ul>',
+    'Flo-Based Application Design',
+    'MEAN Stack',
     '<a href="http://canjs.com/">CanJS</a> - simple, elegant javascript framework',
-    'Currently looking at Machine Learning and <a href="http://opencv.org">OpenCV</a>. Particularly around Image & Video Processing, object detection and classification. (Area of research for thesis)',
+//    'Currently looking at Machine Learning and <a href="http://opencv.org">OpenCV</a>. Particularly around Image & Video Processing, object detection and classification. (Area of research for thesis)',
     'Building large applications in <a href="http://angularjs.org">AngularJS</a>',
     "Improving Website performance",
     "Enterprise error handling"
@@ -25,7 +41,8 @@ var research = new can.ArrayList([
 
 var recommendations = new can.ArrayList([
     '<a href="http://angularjs.org">AngularJS</a> is a great framework for developers who want to build applications that scale',
-    'Toby Segaran book, Programming Collective Intelligence. It\'s an awesome Introduction to the subject area'
+    'Toby Segaran book, Programming Collective Intelligence. It\'s an awesome Introduction to the subject area',
+    'Generating Parsers with JavaCC is a very good book (along with Dragon Book) to learning about parser design'
 ]);
 
 var freebies = new can.ArrayList([
@@ -37,6 +54,8 @@ var freebies = new can.ArrayList([
 
 var books = new can.ArrayList([
     {title: "Collection Intelligence", imageUrl: "images/books/pci.jpg"},
+    {title: "Nudge", imageUrl: "images/books/2527900.jpg"},
+    {title: "Generating Parsers with JavaCC", imageUrl: "images/books/gpwj_second_edition_small.jpg"},
     {title: "Collection Intelligence in Action", imageUrl: "images/books/1933988312.jpg"},
     {title: "Search Patterns", imageUrl: "images/books/cover.jpg"},
     {title: "Autobiography of Malcolm X", imageUrl: "images/books/s.png"},
@@ -53,6 +72,7 @@ var books = new can.ArrayList([
 ]);
 
 $(function () {
+    $("#work-area").html(can.view("templates/items.mustache", {items: work}));
     $("#research-area").html(can.view("templates/items.mustache", {items: research}));
     $("#project-area").html(can.view("templates/projects.mustache", {projects: projects}));
     $("#freebies-area").html(can.view("templates/items.mustache", {items: freebies}));
