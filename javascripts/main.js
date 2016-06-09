@@ -3,7 +3,7 @@
 var work = new can.ArrayList([
     'Currently working as a consultant at <h-data>Tera Analytics</h-data>. Specializing in building Big Data analytics tools using a ' +
     'Flow-based programming paradigm',
-    'Consultant at <h-data>Conscia</h-data>'
+    'Head of Development at <h-data>Conscia</h-data>'
 ]);
 
 var projects = new can.ArrayList([
