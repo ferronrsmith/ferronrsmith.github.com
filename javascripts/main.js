@@ -13,7 +13,6 @@ var projects = new can.ArrayList([
     {url: "https://github.com/ferronrsmith/angularjs-memory-game", name: "angularjs memory game", description: "port of the jquery memory game to angularjs"},
     {url: "https://github.com/ferronrsmith/anuglarjs-jasmine-matchers", name: "anuglarjs jasmine matchers", description: " a large set of jasmine matchers for angular js testing"},
     {url: "https://github.com/ferronrsmith/angularjs-placeholder", name: "anuglarjs placeholders", description: "a simple pollfill for html5 placeholders for IE9 and lower"},
-    {url: "https://github.com/ferronrsmith/jso", name: "jso", description: "a fork rewrite of the Javascript OAuth Library. The new implementation adds authorization grant flow & password grant flow"},
     {url: "https://github.com/ferronrsmith/angular-pubnub-chat", name: "angular pubnub chat", description: "A simple implementation of chat client using pubnub for sending messages"},
     {url: "https://github.com/lwhiteley/AngularLogExtender", name: "angular log extender", description: "AngularLogExtender is an AngularJS module that extends the Angular $log functionality"},
     {url: "https://github.com/ferronrsmith/httpcontext-simulator", name: "httpcontext-simulator", description: "A simple library used for simulating http context during unit or integration testing"},
