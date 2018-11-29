@@ -2,8 +2,8 @@
 
 var work = new can.ArrayList([
     'Currently working as a consultant at <h-data>Tera Analytics</h-data>. Specializing in building Big Data analytics tools using a ' +
-    'Flow-based programming paradigm',
-    'Head of Development at <h-data>Conscia</h-data>'
+    'Stream based programming',
+    'Pricipal Software Engineer at <h-data>Conscia</h-data>'
 ]);
 
 var projects = new can.ArrayList([
@@ -22,20 +22,27 @@ var projects = new can.ArrayList([
 var research = new can.ArrayList([
     'Enterprise Search with Solr & ElasticSearch',
     'NoSQL',
-    'ArangoDB',
+    // 'ArangoDB',
+    'Graph Database',
+    'Apache Tika',
     'Compiler Design. Built a toy programming language : ' +
     '<ul>' +
-    '<li>SMPL(functional programming language)</li>' +
-    '<li>LOGO(subset of the <a href="https://en.wikipedia.org/wiki/Logo_(programming_language)">logo</a> programming language)</li>' +
-    '<li> HPL (Graphics processing language for simple 2D transformations)</li>' +
+        '<li>SMPL(functional programming language)</li>' +
+        '<li>LOGO(subset of the <a href="https://en.wikipedia.org/wiki/Logo_(programming_language)">logo</a> programming language)</li>' +
+        '<li> HPL (Graphics processing language for simple 2D transformations)</li>' +
     '</ul>',
-    'Flo-Based Application Design',
-    'MEAN Stack',
+    // 'Flo-Based Application Design',
+    // 'MEAN Stack',
+    'Node.JS Streams',
     '<a href="http://canjs.com/">CanJS</a> - simple, elegant javascript framework',
 //    'Currently looking at Machine Learning and <a href="http://opencv.org">OpenCV</a>. Particularly around Image & Video Processing, object detection and classification. (Area of research for thesis)',
-    'Building large applications in <a href="http://angularjs.org">AngularJS</a>',
+    // 'Building large applications in <a href="http://angularjs.org">AngularJS</a>',
+    'Building large applications in <a href="https://reactjs.org/">React.JS</a>',
     "Improving Website performance",
-    "Enterprise error handling"
+    "Enterprise error handling",
+    "Distributed Logging with Graylog",
+    "Enterprise Monitoring with Prometheus",
+    "Enterprise Ochestration with Docker Swarm"
 ]);
 
 var recommendations = new can.ArrayList([
