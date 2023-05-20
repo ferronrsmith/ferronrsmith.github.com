@@ -3,18 +3,20 @@
 var work = new can.ArrayList([
     'Currently working as a consultant at <h-data>Tera Analytics</h-data>. Specializing in building Big Data analytics tools using a ' +
     'Stream based programming',
-    'Pricipal Software Engineer at <h-data>Conscia</h-data>'
+    'Search Engineer at <h-data>Perficient</h-data>'
 ]);
 
 var projects = new can.ArrayList([
+    { url: "https://github.com/elasticsearch-dump/elasticsearch-dump", name: "elasticsearch-dump", description: "ETL tool for Elasticsearch"},
+    { url: "https://github.com/danpaz/bodybuilder", name: "bodybuilder", description: "An elasticsearch query body builder. Easily build complex queries for elasticsearch with a simple, predictable api."},
     {url: "https://github.com/ferronrsmith/tiny-template-engine", name: "tiny template engine", description: "a very simple templating engine"},
     {url: "https://github.com/ferronrsmith/bunyan-amqp", name: "Bunyan Log Extension", description: "AMQP (RabbitMQ) stream for the Bunyan logger"},
     {url: "https://github.com/ferronrsmith/tiny-date-formatter", name: "tiny date formatter", description: "a very simple date formatting library that developers can use to easily parse date"},
-    {url: "https://github.com/ferronrsmith/angularjs-memory-game", name: "angularjs memory game", description: "port of the jquery memory game to angularjs"},
-    {url: "https://github.com/ferronrsmith/anuglarjs-jasmine-matchers", name: "anuglarjs jasmine matchers", description: " a large set of jasmine matchers for angular js testing"},
-    {url: "https://github.com/ferronrsmith/angularjs-placeholder", name: "anuglarjs placeholders", description: "a simple pollfill for html5 placeholders for IE9 and lower"},
-    {url: "https://github.com/ferronrsmith/angular-pubnub-chat", name: "angular pubnub chat", description: "A simple implementation of chat client using pubnub for sending messages"},
-    {url: "https://github.com/lwhiteley/AngularLogExtender", name: "angular log extender", description: "AngularLogExtender is an AngularJS module that extends the Angular $log functionality"},
+    // {url: "https://github.com/ferronrsmith/angularjs-memory-game", name: "angularjs memory game", description: "port of the jquery memory game to angularjs"},
+    // {url: "https://github.com/ferronrsmith/anuglarjs-jasmine-matchers", name: "anuglarjs jasmine matchers", description: " a large set of jasmine matchers for angular js testing"},
+    // {url: "https://github.com/ferronrsmith/angularjs-placeholder", name: "anuglarjs placeholders", description: "a simple pollfill for html5 placeholders for IE9 and lower"},
+    // {url: "https://github.com/ferronrsmith/angular-pubnub-chat", name: "angular pubnub chat", description: "A simple implementation of chat client using pubnub for sending messages"},
+    // {url: "https://github.com/lwhiteley/AngularLogExtender", name: "angular log extender", description: "AngularLogExtender is an AngularJS module that extends the Angular $log functionality"},
     {url: "https://github.com/ferronrsmith/httpcontext-simulator", name: "httpcontext-simulator", description: "A simple library used for simulating http context during unit or integration testing"},
     {url: "https://github.com/ferronrsmith/angular-pubnub-chat-server", name: "angular pubnub server", description: "Backend component for the angular chat service"}
 ]);
@@ -46,7 +48,7 @@ var research = new can.ArrayList([
 ]);
 
 var recommendations = new can.ArrayList([
-    '<a href="http://angularjs.org">AngularJS</a> is a great framework for developers who want to build applications that scale',
+    // '<a href="http://angularjs.org">AngularJS</a> is a great framework for developers who want to build applications that scale',
     'Toby Segaran book, Programming Collective Intelligence. It\'s an awesome Introduction to the subject area',
     'Generating Parsers with JavaCC is a very good book (along with Dragon Book) to learning about parser design'
 ]);
@@ -59,13 +61,13 @@ var freebies = new can.ArrayList([
 ]);
 
 var books = new can.ArrayList([
-    {title: "Collection Intelligence", imageUrl: "images/books/pci.jpg"},
+    // {title: "Collection Intelligence", imageUrl: "images/books/pci.jpg"},
     {title: "Nudge", imageUrl: "images/books/2527900.jpg"},
     {title: "Generating Parsers with JavaCC", imageUrl: "images/books/gpwj_second_edition_small.jpg"},
-    {title: "Collection Intelligence in Action", imageUrl: "images/books/1933988312.jpg"},
+    // {title: "Collection Intelligence in Action", imageUrl: "images/books/1933988312.jpg"},
     {title: "Search Patterns", imageUrl: "images/books/cover.jpg"},
-    {title: "Autobiography of Malcolm X", imageUrl: "images/books/s.png"},
-    {title: "Up From Slavery", imageUrl: "images/books/000520.jpg"},
+    // {title: "Autobiography of Malcolm X", imageUrl: "images/books/s.png"},
+    // {title: "Up From Slavery", imageUrl: "images/books/000520.jpg"},
     {title: "The Introduction to Disciplined Agile Delivery", imageUrl: "images/books/idad.jpg"},
     {title: "The Pragmatic Programmer", imageUrl: "images/books/9780201616224.jpg"},
     {title: "Don't Make me Think", imageUrl: "images/books/9780321965516.jpg"},
@@ -73,8 +75,8 @@ var books = new can.ArrayList([
     {title: "Code Complete", imageUrl: "images/books/Code-Complete-9780735619678.jpg"},
     {title: "Running Lean", imageUrl: "images/books/running_lean-687x1024.png"},
     {title: "The Mythical Man Month", imageUrl: "images/books/fff7ff6694d3b5498685a088b127ab2f.jpg"},
-    {title: "Malcom X - By Any Means Necessary", imageUrl: "images/books/Malcolm-X-by-any-means-necessary.jpg"},
-    {title: "The Souls of Black Folk", imageUrl: "images/books/9781495341564.JPG"}
+    // {title: "Malcom X - By Any Means Necessary", imageUrl: "images/books/Malcolm-X-by-any-means-necessary.jpg"},
+    // {title: "The Souls of Black Folk", imageUrl: "images/books/9781495341564.JPG"}
 ]);
 
 $(function () {
