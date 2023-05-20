@@ -13,6 +13,10 @@ ul#bookList li {
     padding: 5px;
 }
 
+ul {
+    margin-bottom: 0px;
+}
+
 .nostyle li {
     list-style-type: none;
     padding: 2px; 

@@ -106,7 +106,7 @@ $(function () {
     var fstList = new can.ArrayList();
     var sndList = new can.ArrayList();
 
-    books.each(function (elem, index) {
+    books.shuffle().each(function (elem, index) {
         if (index % 2 === 0) {
             sndList.push(elem);
         } else {
