@@ -56,7 +56,7 @@ var recommendations = new can.ArrayList([
 var freebies = new can.ArrayList([
     '<a href="https://www.coursera.org/">https://www.coursera.org/</a> is offering free courses online from Ivy League schools. Persons should really take a look. I\'ve enrolled in the Machine Learning Course from Standford University.Now no one can say I never "went" to an Ivy League school',
     '<a href="http://pythonbooks.revolunet.com/">Free Python Books</a>',
-    '<a href="https://github.com/ferronrsmith/free-programming-books/blob/master/free-programming-books.md">Free Programming Books </a>',
+    // '<a href="https://github.com/ferronrsmith/free-programming-books/blob/master/free-programming-books.md">Free Programming Books </a>',
     '<a href="http://jsbooks.revolunet.com/">Free JavaScript Books</a>'
 ]);
 
