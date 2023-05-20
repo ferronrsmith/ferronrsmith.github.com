@@ -9,6 +9,7 @@ var work = new can.ArrayList([
 var projects = new can.ArrayList([
     { url: "https://github.com/elasticsearch-dump/elasticsearch-dump", name: "elasticsearch-dump", description: "ETL tool for Elasticsearch"},
     { url: "https://github.com/danpaz/bodybuilder", name: "bodybuilder", description: "An elasticsearch query body builder. Easily build complex queries for elasticsearch with a simple, predictable api."},
+    { url: "https://github.com/ferronrsmith/bash-template-engine", name: "shell template engine", description: "a very simple templating engine for posix shells"},
     {url: "https://github.com/ferronrsmith/tiny-template-engine", name: "tiny template engine", description: "a very simple templating engine"},
     {url: "https://github.com/ferronrsmith/bunyan-amqp", name: "Bunyan Log Extension", description: "AMQP (RabbitMQ) stream for the Bunyan logger"},
     {url: "https://github.com/ferronrsmith/tiny-date-formatter", name: "tiny date formatter", description: "a very simple date formatting library that developers can use to easily parse date"},
@@ -18,14 +19,28 @@ var projects = new can.ArrayList([
     // {url: "https://github.com/ferronrsmith/angular-pubnub-chat", name: "angular pubnub chat", description: "A simple implementation of chat client using pubnub for sending messages"},
     // {url: "https://github.com/lwhiteley/AngularLogExtender", name: "angular log extender", description: "AngularLogExtender is an AngularJS module that extends the Angular $log functionality"},
     {url: "https://github.com/ferronrsmith/httpcontext-simulator", name: "httpcontext-simulator", description: "A simple library used for simulating http context during unit or integration testing"},
-    {url: "https://github.com/ferronrsmith/angular-pubnub-chat-server", name: "angular pubnub server", description: "Backend component for the angular chat service"}
+    // {url: "https://github.com/ferronrsmith/angular-pubnub-chat-server", name: "angular pubnub server", description: "Backend component for the angular chat service"}
 ]);
 
 var research = new can.ArrayList([
-    'Enterprise Search with Solr & ElasticSearch',
+    'Enterprise Search Solutions: ' +
+    '<ul>' +
+        '<li>Solr</li>' +
+        '<li>Elasticsearch</li>' +
+        '<li>OpenSearch</li>' +
+        '<li>Meilisearch</li>' +
+        '<li>ZincSearch</li>' +
+        '<li>Sonic</li>' +
+    '</ul>',
     'NoSQL',
     // 'ArangoDB',
-    'Graph Database',
+    'Graph Databases:' + 
+    '<ul>' +
+        '<li>ArangoDB</li>' +
+        '<li>Neo4j</li>' +
+        '<li>OrientDB</li>' +
+        '<li>DGraph</li>' +
+    '</ul>',
     'Apache Tika',
     'Compiler Design. Built a toy programming language : ' +
     '<ul>' +
@@ -62,6 +77,8 @@ var freebies = new can.ArrayList([
 
 var books = new can.ArrayList([
     // {title: "Collection Intelligence", imageUrl: "images/books/pci.jpg"},
+    {title: "Solr in Action", imageUrl: "images/books/grainger.png"},
+    {title: "Elasticsearch The Definitive Guide", imageUrl: "images/books/es-def.jpg"},
     {title: "Nudge", imageUrl: "images/books/2527900.jpg"},
     {title: "Generating Parsers with JavaCC", imageUrl: "images/books/gpwj_second_edition_small.jpg"},
     // {title: "Collection Intelligence in Action", imageUrl: "images/books/1933988312.jpg"},
